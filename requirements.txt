@@ -1,0 +1,34 @@
+# ---- JARVIS core (voice + brain) ----
+google-genai
+google-generativeai
+sounddevice
+pyaudio
+numpy
+pillow
+requests
+beautifulsoup4
+duckduckgo-search
+youtube-transcript-api
+
+# ---- Screen / desktop control ----
+playwright
+pyautogui
+pyperclip
+pygetwindow
+pywinauto
+opencv-python
+mss
+psutil
+comtypes
+pycaw
+win10toast
+send2trash
+
+# ---- Dashboards / API (dashboard.py, mobile_control.py) ----
+fastapi
+uvicorn[standard]
+python-multipart
+websockets
+
+# ---- Memory / database ----
+pymongo

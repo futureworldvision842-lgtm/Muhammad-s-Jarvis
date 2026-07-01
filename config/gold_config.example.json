@@ -1,0 +1,8 @@
+{
+  "_comment": "Contacts that receive the daily 5 AM gold-trading brief on WhatsApp. Use full international number (countrycode+number, no + or spaces), e.g. 923001234567 for Pakistan.",
+  "whatsapp_contacts": [
+    { "number": "920000000000", "label": "example contact 1" },
+    { "number": "920000000001", "label": "example contact 2" }
+  ],
+  "daily_time": "05:00"
+}

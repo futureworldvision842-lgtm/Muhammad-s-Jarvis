@@ -1,0 +1,49 @@
+# ============================================================
+#  SECRETS  --  NEVER COMMIT (users provide their own)
+# ============================================================
+config/api_keys.json
+config/gold_config.json
+config/*.local.json
+
+# WhatsApp login session (Baileys / whatsapp-web.js)
+wa/auth/
+wa/session/
+wa/.wwebjs_auth/
+**/wa_sender_session/
+**/tokens/
+
+# Personal long-term memory / brain state
+memory/long_term.json
+memory/*.json
+memory/*.db
+*.bak
+*.bkp
+
+# ============================================================
+#  RUNTIME / GENERATED
+# ============================================================
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+node_modules/
+database/
+*.log
+
+# ============================================================
+#  HEAVY / LOCAL-ONLY  (installer or the app fetches these)
+# ============================================================
+# scratch = cloned 3rd-party repos, ollama binary+models, studies, sessions
+scratch/
+desktop_cleanup/
+
+# Personal media / captures
+*.png
+*.jpg
+*.jpeg
+*.mp3
+*.wav
+*.mp4
+face.png
+screenshot.png
