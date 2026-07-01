@@ -50,3 +50,17 @@ screenshot.png
 
 # External bots fetched by install_extras.bat (not committed)
 bots/
+
+# ---- Bundled apps (apps/) — never commit their secrets/runtime ----
+**/.env
+**/.env.*
+*.env
+!**/.env.example
+!.env.example
+**/session/
+**/.wwebjs_cache/
+**/generated_scripts/
+apps/**/node_modules/
+apps/**/dist/
+apps/**/build/
+apps/**/.next/

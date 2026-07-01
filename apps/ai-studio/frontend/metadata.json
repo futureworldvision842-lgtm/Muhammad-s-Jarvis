@@ -1,0 +1,9 @@
+{
+  "name": "Vision Point AI Studio",
+  "description": "A comprehensive web application showcasing a wide range of Gemini API capabilities, including text and chat, image and video generation/analysis, real-time voice conversations, and grounding with Google Search and Maps.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
