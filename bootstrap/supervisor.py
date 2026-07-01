@@ -91,6 +91,19 @@ def build_services():
     if ollama:
         svcs.append(("Ollama", "port", 11434, [ollama, "serve"], os.path.dirname(ollama) if os.path.isabs(ollama) else ROOT))
 
+    # ---- Optional external bots (installed by install_extras.bat) ----
+
+    # Moltbot / clawdbot gateway — installed globally via npm.
+    if have("clawdbot"):
+        svcs.append(("Moltbot", "port", 18789, ["cmd", "/c", "clawdbot gateway"], ROOT))
+
+    # Odysseus AI server — cloned into bots/odysseus (FastAPI on 7000).
+    ody = _p("bots", "odysseus", "app.py")
+    if os.path.exists(ody):
+        svcs.append(("Odysseus", "port", 7000,
+                     [PY, "-m", "uvicorn", "app:app", "--host", "127.0.0.1", "--port", "7000"],
+                     _p("bots", "odysseus")))
+
     return svcs
 
 

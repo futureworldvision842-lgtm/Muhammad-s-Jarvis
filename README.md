@@ -25,6 +25,9 @@ That's it. `install.bat` creates the environment, installs every dependency, set
 the WhatsApp bridge, and prepares your config. `run.bat` launches the supervisor,
 which brings up the whole ecosystem and keeps it alive.
 
+**Want the extra bots too?** Run **`install_extras.bat`** — it fetches Moltbot,
+Odysseus and a local Ollama model (see *The bots* below). All optional.
+
 ---
 
 ## ✨ What it does
@@ -42,6 +45,28 @@ which brings up the whole ecosystem and keeps it alive.
 | 🥇 | **Daily gold brief** — 5 AM trading suggestions to your WhatsApp contacts |
 | 🔧 | **Self-upgrade** — writes and installs its own new skills on request |
 | ♻️ | **Self-healing** — a supervisor auto-restarts anything that dies, and auto-starts on boot |
+
+---
+
+## 🤖 The bots / agents
+
+JARVIS is a whole ecosystem. The **core** ships in this repo; the **extra bots** are
+open-source and fetched by `install_extras.bat` (so nothing huge or third-party bloats
+the repo, but a fresh clone still ends up with everything):
+
+| Bot / agent | Where it lives | How you get it |
+|---|---|---|
+| 🎙️ Voice core + brain | `main.py` | in this repo ✅ |
+| 📊 World Monitor + HUD dashboard | `dashboard.py`, `actions/world_monitor.py`, `ui.py` | in this repo ✅ |
+| 📱 WhatsApp bridge | `wa/` (Baileys) | in this repo ✅ |
+| 🥇 Gold advisor / 🧪 self-upgrade / skills | `skills/`, `actions/self_upgrade.py` | in this repo ✅ |
+| 🧩 **Moltbot** (clawdbot gateway) | npm global | `install_extras.bat` → `npm i -g clawdbot` |
+| 🧠 **Odysseus** AI server | `bots/odysseus/` | `install_extras.bat` → git clone |
+| 💾 **Ollama** (offline LLM) | system | `install_extras.bat` → `ollama pull` |
+| ⚡ **Hermes** agent (Nous) | separate install | auto-detected once `hermes` is on PATH |
+
+The supervisor automatically launches whichever of these are installed — install the
+extras and they just light up.
 
 ---
 
@@ -98,7 +123,9 @@ actions/           Tools: screen, web, world_monitor, self_upgrade, ...
 skills/            Hot-loadable skills (gold advisor, hermes, ...)
 bootstrap/         Portable supervisor (path-independent launcher)
 config/            Your keys & settings (templates committed, real ones ignored)
-install.bat        One-click installer
+bots/              External bots fetched by install_extras.bat (e.g. odysseus)
+install.bat        One-click installer (core)
+install_extras.bat Fetch optional bots (Moltbot, Odysseus, Ollama)
 run.bat            Start everything
 ```
 

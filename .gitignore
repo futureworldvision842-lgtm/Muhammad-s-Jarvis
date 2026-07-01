@@ -47,3 +47,6 @@ desktop_cleanup/
 *.mp4
 face.png
 screenshot.png
+
+# External bots fetched by install_extras.bat (not committed)
+bots/
