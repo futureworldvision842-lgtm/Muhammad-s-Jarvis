@@ -96,13 +96,22 @@ def _get_api_key() -> str:
 
 def _load_system_prompt() -> str:
     try:
-        return PROMPT_PATH.read_text(encoding="utf-8")
+        base = PROMPT_PATH.read_text(encoding="utf-8")
     except Exception:
-        return (
+        base = (
             "You are JARVIS, Tony Stark's AI assistant. "
             "Be concise, direct, and always use the provided tools to complete tasks. "
             "Never simulate or guess results — always call the appropriate tool."
         )
+    # Append the Boss's founder identity + mission so JARVIS knows who Muhammad
+    # Qureshi is, understands his mission/vision, and can represent/act for him.
+    try:
+        mission = (BASE_DIR / "core" / "founder_mission.md").read_text(encoding="utf-8")
+        if mission.strip():
+            base = base + "\n\n" + mission
+    except Exception:
+        pass
+    return base
     
 _last_memory_input = ""
 

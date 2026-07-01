@@ -64,3 +64,6 @@ apps/**/node_modules/
 apps/**/dist/
 apps/**/build/
 apps/**/.next/
+
+# Boss's personal founder identity/persona — local only (loads into JARVIS if present)
+core/founder_mission.md
